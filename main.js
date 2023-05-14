@@ -5,20 +5,9 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
 
-
-
 let mainWindow = null;
 
 const menuItems = [
-    {
-        label: "Menu",
-        submenu: [
-            {
-                label: "About moveApp"
-            }
-        ]
-    },
-
     {
         label: "File",
         submenu: [
@@ -33,8 +22,33 @@ const menuItems = [
                 type: "separator",
             },
             {
-                label: "Exit"
+                label: "Exit",
+                click: () => app.quit()
             }
+        ]
+    },
+
+    {
+        label: 'View',
+        submenu: [
+          { role: 'reload' },
+          { type: 'separator' },
+          { role: 'resetZoom' },
+          { role: 'zoomIn' },
+          { role: 'zoomOut' },
+          { type: 'separator' },
+          { role: 'togglefullscreen' }
+        ]
+      },
+
+    {
+        label: "MoveApp",
+        submenu: [
+            {
+                label: "About moveApp"
+            },
+            { type: 'separator' },
+            { role: 'services' },
         ]
     },
 
