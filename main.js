@@ -11,15 +11,29 @@ const menuItems = [
     {
         label: "File",
         submenu: [
-           
+
             {
-                label: "Learn more"
+                label: "Map",
+                click: async () => {
+                    const win2 = new BrowserWindow({
+                    height: 300,
+                    width: 400
+                    });
+
+                    win2.loadURL("https://www.google.com/maps/@53.3450488,-6.2680012,14z");
+                },
+            },
+            {
+                type: "separator",
             },
             {
                 label: "Help"
             },
             {
                 type: "separator",
+            },
+            {
+                label: "Learn more"
             },
             {
                 label: "Exit",
