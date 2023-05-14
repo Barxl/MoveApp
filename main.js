@@ -73,6 +73,19 @@ const menuItems = [
                 label: "User Account"
             },
             {
+                label: "Open camera",
+                click: async () => {
+                    const win3 = new BrowserWindow({
+                    height: 750,
+                    width: 650
+                    });
+                    
+                    win3.loadFile("camera.html");
+                    win3.once("ready-to-show"), ()=> win3.show();
+                },
+            },
+
+            {
                 type: "separator",
             },
             {
